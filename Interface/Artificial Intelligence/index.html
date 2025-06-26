@@ -388,7 +388,36 @@
 
   <h1>Second</h1>
 
-
+<ul>
+<li>以符号主义为核心的逻辑推理</li>
+<li>以问题求解为核心的探寻搜索</li>
+<li>以数据驱动为核心的机器学习</li>
+<li>以行为主义为核心的强化学习</li>
+<li>以博弈对抗为核心的决策智能</li>
+</ul>
+<p>监督学习是依赖标记数据集, 每一个样本测试完成后会获得即时评测误差。
+强化学习是通过试错和与外界环境交互的过程中完成的最大化奖励积累。</p>
+<p>深度学习 = 人工神经网络 + 训练学习策略</p>
+<p>机器学习经典流程: 训练集、验证集、测试集。</p>
+<p>机器学习模型的若干性能度量指标来判断性能优劣。
+对于二分类问题, 有如下参数。正例总数 <span class="arithmatex">\(P\)</span>, 负例总数 <span class="arithmatex">\(N\)</span>。机器模型预测类别与实际类别的关系可以将用例分为四类: 真正例 <span class="arithmatex">\(TP\)</span>, 假正例 <span class="arithmatex">\(FP\)</span>, 真反例 <span class="arithmatex">\(TN\)</span>, 假反例 <span class="arithmatex">\(FN\)</span>。</p>
+<ul>
+<li>准确率(<span class="arithmatex">\(Accuracy\)</span>): <span class="arithmatex">\(Acc = \frac{TP+TN}{P+N}\)</span></li>
+<li>错误率(<span class="arithmatex">\(Error~Rate\)</span>): <span class="arithmatex">\(ErrorRate = \frac{FP+FN}{P+N}\)</span></li>
+<li>精确率或者查准率(<span class="arithmatex">\(Precision\)</span>): <span class="arithmatex">\(Precision = \frac{TP}{TP+FP}\)</span></li>
+<li>召回率或者查全率(<span class="arithmatex">\(Recall\)</span>): <span class="arithmatex">\(Recall = \frac{TP}{TP+FN}\)</span></li>
+</ul>
+<p>赫布理论: 神经元之间持续重复经验刺激可以使突触传递效能增强。
+前馈神经网络</p>
+<p>反向传播的主要步骤:</p>
+<ul>
+<li>前向传播: 网络接收输入并通过每一层的传递, 直到产生输出。每一层的输出都是下一层的输入, 每一层只会接受相邻的前一层的信号。</li>
+<li>计算误差: 在输出层, 计算神经网络的实际输出值与期望正确值之间的误差。常见的损失函数包括均方误差(传统均方差)以及交叉熵。</li>
+<li>反向传播误差: 将输出层的误差反向传递回网络, 通过计算神经网络输出值相对于各个权重的偏导数得到每一层每个神经元的误差贡献。</li>
+<li>更新权重: 根据误差贡献调整每个连接权重, 一般使用梯度下降的方式更新权重(更新量取决于步长、偏导数以及误差值)</li>
+</ul>
+<p>前馈神经网络每一层内的神经元没有相互连接。
+<span class="arithmatex">\(sigmoid\)</span> 函数不适合深层网络, 因为其在两端处的梯度过小, 对于深层网络会出现 <span class="arithmatex">\(vanishing~gradient\)</span> 梯度消失的情况。</p>
 
 
 
@@ -451,6 +480,8 @@
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
